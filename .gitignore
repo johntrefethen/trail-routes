@@ -9,3 +9,5 @@ __pycache__/
 *.hgt
 *.pbf
 *.osm
+frontend/node_modules/
+frontend/dist/
