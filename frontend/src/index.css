@@ -1,0 +1,133 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --brand: #2d6a4f;
+  --brand-light: #52b788;
+  --accent: #e76f51;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #1b2a35;
+  --muted: #6c757d;
+  --border: #dee2e6;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* ---- layout ---- */
+.app-header {
+  background: var(--brand);
+  color: #fff;
+  padding: .75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.app-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: .02em; }
+.app-header .subtitle { font-size: .8rem; opacity: .75; }
+
+.app-body {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .app-body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+}
+
+/* ---- sidebar ---- */
+.sidebar {
+  background: var(--card-bg);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ---- form ---- */
+.search-form { display: flex; flex-direction: column; gap: .85rem; }
+.search-form h2 { font-size: .9rem; font-weight: 600; color: var(--brand); text-transform: uppercase; letter-spacing: .05em; }
+.form-group { display: flex; flex-direction: column; gap: .3rem; }
+.form-group label { font-size: .8rem; font-weight: 500; color: var(--muted); }
+.form-group select,
+.form-group input[type=range] { width: 100%; }
+.form-group select {
+  padding: .45rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .9rem;
+  background: #fff;
+}
+.slider-row { display: flex; align-items: center; gap: .5rem; }
+.slider-row input[type=range] { flex: 1; accent-color: var(--brand); }
+.slider-val { font-size: .85rem; font-weight: 600; min-width: 54px; text-align: right; }
+.toggle-group { display: flex; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.toggle-group button {
+  flex: 1; padding: .4rem; font-size: .85rem; border: none; background: #fff; cursor: pointer; transition: background .15s;
+}
+.toggle-group button.active { background: var(--brand); color: #fff; }
+.btn-search {
+  padding: .6rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.btn-search:hover { opacity: .9; }
+.btn-search:disabled { opacity: .5; cursor: default; }
+
+/* ---- route list ---- */
+.route-list { display: flex; flex-direction: column; gap: .65rem; }
+.route-list h2 { font-size: .9rem; font-weight: 600; color: var(--brand); text-transform: uppercase; letter-spacing: .05em; }
+.route-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: .65rem .75rem;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+  background: #fff;
+}
+.route-card:hover, .route-card.selected { border-color: var(--brand-light); box-shadow: var(--shadow); }
+.route-card.selected { border-color: var(--accent); }
+.route-card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .3rem; }
+.route-card-header .rank { font-size: .75rem; font-weight: 700; color: var(--muted); }
+.route-card-header .type-badge {
+  font-size: .7rem; padding: .1rem .4rem; border-radius: 20px;
+  background: var(--brand); color: #fff;
+}
+.route-stats { display: flex; gap: .9rem; margin-bottom: .4rem; }
+.route-stat { font-size: .82rem; }
+.route-stat .val { font-weight: 700; }
+.route-stat .unit { color: var(--muted); font-size: .75rem; }
+.trail-names { font-size: .75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ---- map pane ---- */
+.map-pane { position: relative; }
+.map-pane .leaflet-container { width: 100%; height: 100%; min-height: 400px; }
+
+/* ---- elevation profile ---- */
+.elev-profile svg { display: block; width: 100%; height: 60px; }
+
+/* ---- status ---- */
+.status-msg { font-size: .82rem; color: var(--muted); text-align: center; padding: .5rem 0; }
+.error-msg { font-size: .82rem; color: #c0392b; padding: .4rem .6rem; background: #fef0ef; border-radius: var(--radius); }
