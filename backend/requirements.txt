@@ -1,0 +1,9 @@
+requests>=2.31
+osmium>=3.7
+networkx>=3.0
+shapely>=2.0
+py3dep>=0.16
+requests-cache>=1.1
+tqdm>=4.0
+fastapi>=0.110
+uvicorn[standard]>=0.29

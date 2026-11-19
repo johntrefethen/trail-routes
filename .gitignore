@@ -1,0 +1,11 @@
+backend/data/*
+!backend/data/.gitkeep
+*.gpickle
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+*.tif
+*.hgt
+*.pbf
+*.osm

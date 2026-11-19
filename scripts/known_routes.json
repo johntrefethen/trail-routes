@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Horsetooth Rock Loop",
+    "_note": "Waypoints are real OSM junctions. expected_* come from your own Google Maps / Gaia GPS measurements of the same loop — fill these in and re-run validate.py to confirm accuracy.",
+    "waypoints": [
+      [40.52401, -105.18120],
+      [40.53876, -105.19522],
+      [40.53458, -105.19124],
+      [40.52401, -105.18120]
+    ],
+    "expected_distance_km": null,
+    "expected_gain_m": null
+  },
+  {
+    "name": "Soderberg-Mill Creek Loop",
+    "_note": "Loops via Spring Creek Trail, Towers Trail, and Mill Creek Trail through the Horsetooth component. Fill in expected values from your measurement.",
+    "waypoints": [
+      [40.53651, -105.18361],
+      [40.55341, -105.18122],
+      [40.55303, -105.19465],
+      [40.53651, -105.18361]
+    ],
+    "expected_distance_km": null,
+    "expected_gain_m": null
+  },
+  {
+    "name": "Blue Sky Trail (N to S)",
+    "_note": "North endpoint near Soderberg connector to south end of Blue Sky Trail near Loveland. One-way segment — verify distance with your GPS track.",
+    "waypoints": [
+      [40.51459, -105.16543],
+      [40.44321, -105.15410]
+    ],
+    "expected_distance_km": null,
+    "expected_gain_m": null
+  }
+]
