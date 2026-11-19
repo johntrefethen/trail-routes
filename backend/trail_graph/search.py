@@ -36,7 +36,7 @@ class RouteResult:
     loss_m: float
     coords: list[tuple[float, float]]            # (lat, lon)
     trail_names: list[str]
-    elevation_profile: list[tuple[float, float]] # (cumulative_dist_m, cumulative_gain_m)
+    elevation_profile: list[tuple[float, float]]  # (cumulative_dist_m, cumulative_gain_m)
     score: float = field(default=0.0)
 
 

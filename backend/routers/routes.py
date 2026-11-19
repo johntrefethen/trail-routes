@@ -11,8 +11,8 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from trail_graph import trailheads as th_module
-from trail_graph.search import search_routes, RouteResult
+from trail_graph import trailheads as th_module  # noqa: E402
+from trail_graph.search import search_routes, RouteResult  # noqa: E402
 
 router = APIRouter(prefix="/api")
 
@@ -73,7 +73,10 @@ def get_trailheads():
 def search(
     trailhead_id: Annotated[str, Query(description="Trailhead ID from /api/trailheads")],
     target_dist_km: Annotated[float, Query(gt=0, le=100, description="Target distance in km")],
-    target_gain_m: Annotated[float | None, Query(ge=0, le=5000, description="Target elevation gain in metres (optional)")] = None,
+    target_gain_m: Annotated[
+        float | None,
+        Query(ge=0, le=5000, description="Target elevation gain in metres (optional)"),
+    ] = None,
     route_type: Annotated[str, Query(description='"loop" or "out-and-back"')] = "loop",
     max_results: Annotated[int, Query(ge=1, le=10)] = 5,
 ):
